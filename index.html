@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Shehzaadi 👑❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  font-family:'Poppins',sans-serif;
+  box-sizing:border-box;
+}
+body{
+  margin:0;
+  height:100vh;
+  background:linear-gradient(135deg,#ffd6e8,#ffb3d9);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+.card{
+  background:#fff0f6;
+  width:90%;
+  max-width:420px;
+  padding:25px;
+  border-radius:25px;
+  text-align:center;
+  box-shadow:0 15px 40px rgba(0,0,0,.25);
+  animation:fade 1s ease;
+}
+@keyframes fade{
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:translateY(0);}
+}
+.hidden{display:none;}
+h1{color:#b1005c;}
+p{color:#5c0030;font-size:15px;}
+
+button{
+  padding:12px 24px;
+  margin:8px;
+  border:none;
+  border-radius:30px;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.yes{background:#ff0059;color:white;}
+.no{background:#ffe1ec;color:#ff0059;}
+.skip{
+  background:#fff;
+  color:#b1005c;
+  border:2px dashed #ff0059;
+}
+.back{background:#ffe1ec;color:#ff0059;}
+
+/* quiz buttons same look */
+.quiz-btn{
+  background:#ffe1ec;
+  color:#ff0059;
+}
+
+/* images */
+img{
+  width:130px;
+  margin:8px;
+  border-radius:15px;
+}
+
+/* stickers */
+.sticker{
+  width:90px;
+  margin:6px;
+}
+
+/* hearts */
+.heart{
+  position:absolute;
+  color:#ff3f7f;
+  animation:float 6s linear infinite;
+}
+@keyframes float{
+  from{bottom:-10px;opacity:1;}
+  to{bottom:110%;opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="card" id="p1">
+  <img src="https://i.ibb.co/DP0325Vr/IMG-20260208-WA0005.jpg" alt="IMG-20260208-WA0005" border="0"></a>
+  <img src="https://i.ibb.co/k7DBCvT/IMG-20260208-WA0003.jpg" alt="IMG-20260208-WA0003" border="0"></a>
+  <h1>Hey Shehzaadi 👑</h1>
+  <p>Will you be my Valentine forever? 🥹❤️</p>
+  <button class="yes" onclick="go(2)">YES</button>
+  <button class="no" onmouseover="move(this)">NO</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="card hidden" id="p2">
+  <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWN2ZHE2MXQyYTE3MDYzNmgzNGJrdWswN3FyN2k2ZHA2aTV0azBueiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KztT2c4u8mYYUiMKdJ/giphy.gif">
+  <h1>Soch lo 🥹</h1>
+  <p>Are you really sure? 😏</p>
+  <button class="yes" onclick="go(3)">YES</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="card hidden" id="p3">
+  <h1>Choose One 🥰</h1>
+  <p>Ya phir seedha dil ki baat 💘</p>
+  <button class="yes" onclick="go(4)">🧠 Mini Quiz</button>
+  <button class="yes" onclick="go(8)">💌 Letter</button>
+  <button class="yes" onclick="go(9)">📸 Memories</button>
+  <br>
+  <button class="next" onclick="go(10)">Next 💘</button>
+</div>
+
+<!-- QUIZ Q1 -->
+<div class="card hidden" id="p4">
+  <h1>Question 1 😌</h1>
+  <p>Dholuu ka boss kaun hai? 👀</p>
+  <button class="quiz-btn" onclick="go(5)">Maata ji</button>
+  <button class="quiz-btn">Matkaa</button>
+  <button class="quiz-btn">Obviously Dholuu 😘</button>
+</div>
+
+<!-- QUIZ Q2 -->
+<div class="card hidden" id="p5">
+  <h1>Question 2 😏</h1>
+  <p>Who fights a lot between us? 👀</p>
+  <button class="quiz-btn" onclick="go(6)">Ofcourse Dholuu 😜</button>
+  <button class="quiz-btn">No one</button>
+  <button class="quiz-btn">Me</button>
+</div>
+
+<!-- QUIZ Q3 -->
+<div class="card hidden" id="p6">
+  <h1>Question 3 🥹</h1>
+  <p>Where do I plan to spend rest of my life? ❤️</p>
+  <button class="quiz-btn">Paris</button>
+  <button class="quiz-btn" onclick="go(7)">In your heart 💘</button>
+  <button class="quiz-btn">On Mars 🚀</button>
+</div>
+
+<!-- QUIZ PASSED -->
+<div class="card hidden" id="p7">
+  <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" class="sticker">
+  <h1>You have passed the test 🎉❤️</h1>
+  <p>Congratulations Shehzaadi 👑<br>Tumne dil jeet liya 🥹💘</p>
+  <button class="back" onclick="go(3)">⬅ Back</button>
+</div>
+
+<!-- LETTER -->
+<div class="card hidden" id="p8">
+  <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXUzbTkyNDAwcnk1eG80YTVjbm16b2p3eXZycGlnbGpiMDM5N3pkZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4asRlBKdJaPeBahjcL/giphy.gif">
+  <h1>A Letter For You Dholu 🥺</h1>
+  <p>
+    Hey baby,<br><br>
+    Thank you for being my person.<br>
+    I want to hold your hand through every season of my life.<br>
+    You are my everything.<br>
+    I love you so so much.<br>
+    Be the same as you are.<br>
+    (Bas thoda sa improvement ho sake toh😜)<br>
+    Sorry for irritating you (not sorry).<br>
+    No one can replace you Dholuu!<br><br>
+    Forever yours,<br>
+    Matkaa 💌
+  </p>
+  <button class="back" onclick="go(3)">⬅ Back</button>
+</div>
+
+<!-- MEMORIES -->
+<div class="card hidden" id="p9">
+  <h1>Our Memories 💞</h1>
+  <img src="https://image2url.com/r2/default/images/1770544036132-0db96e7a-8b4d-42fe-b22b-b44263926c6a.jpg">
+  <img src="https://image2url.com/r2/default/images/1770544926921-3bb5e5b1-e662-48c6-ab52-04757a9f02e8.jpg">
+  <img src="https://i.ibb.co/fVx1gRrD/6.jpg" alt="6" border="0"></a>
+  <img src="https://i.ibb.co/XfnqtMNc/5.jpg" alt="5" border="0"></a>
+  <br>
+  <button class="back" onclick="go(3)">⬅ Back</button>
+</div>
+
+<!-- FINAL -->
+<div class="card hidden" id="p10">
+  <img src="https://i.ibb.co/Kc5pv5fR/IMG-20260208-WA0006.jpg" alt="IMG-20260208-WA0006" border="0"></a>
+  <h1>Be my forever Dholuu!!❤️</h1>
+   
+  </p>
+</div>
+
+<script>
+function go(n){
+  document.querySelectorAll('.card').forEach(c=>c.classList.add('hidden'));
+  document.getElementById('p'+n).classList.remove('hidden');
+}
+
+function move(btn){
+  btn.style.position="absolute";
+  btn.style.left=Math.random()*80+"%";
+  btn.style.top=Math.random()*80+"%";
+}
+
+/* hearts */
+setInterval(()=>{
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="❤️";
+  h.style.left=Math.random()*100+"%";
+  h.style.fontSize=(14+Math.random()*20)+"px";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},500);
+
+/* floating cats */
+setInterval(()=>{
+  const c=document.createElement("div");
+  c.innerHTML="🐱";
+  c.style.position="absolute";
+  c.style.left=Math.random()*100+"%";
+  c.style.bottom="-10px";
+  c.style.fontSize="28px";
+  c.style.animation="float 7s linear";
+  document.body.appendChild(c);
+  setTimeout(()=>c.remove(),7000);
+},3000);
+</script>
+
+</body>
+</html>
